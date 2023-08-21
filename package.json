@@ -10,7 +10,7 @@
     "build": "rm -rf ./dist && tsc"
   },
   "author": "",
-  "license": "ISC",
+  "license": "LGPL-2.1-only",
   "dependencies": {
     "node-fetch": "^3.3.2",
     "proxy-agent": "^6.3.0"
