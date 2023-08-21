@@ -1,12 +1,12 @@
 {
-  "name": "findme",
+  "name": "findme-js",
   "version": "1.0.0",
   "description": "A lightweight javascript library to get a detailed geolocation of IP address as well as to find out where you are.",
   "main": "/dist/index.js",
   "type": "module",
   "scripts": {
     "dev": "node --loader ts-node/esm ./test.ts",
-    "build": "rm -rf ./dist && tsc"
+    "build": "rm -rf ./dist; tsc"
   },
   "author": "",
   "license": "LGPL-2.1-only",
