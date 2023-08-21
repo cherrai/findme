@@ -1,0 +1,22 @@
+{
+  "name": "findme",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node --loader ts-node/esm ./test.ts",
+    "build": "rm -rf ./dist && tsc"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-fetch": "^3.3.2",
+    "proxy-agent": "^6.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.5.1",
+    "ts-node": "^10.9.1"
+  }
+}
