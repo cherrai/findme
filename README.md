@@ -110,7 +110,7 @@ Install the dependencies.
 npm i
 ```
 
-To build the test, run
+To build the library, run
 ```bash
 npm run build
 ```
