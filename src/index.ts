@@ -1,4 +1,4 @@
-import {
+import type {
   GeoInfo,
   GeoInfoResponse,
   GeoInfoSuccess,
@@ -24,12 +24,9 @@ export async function getGeoInfo(
   const proxyAgent =
     IS_IN_BROWSER || proxySettings === 'none'
       ? false
-      : await (async () =>
-          proxySettings === 'system'
-            ? new (
-                await import('proxy-agent')
-              ).ProxyAgent()
-            : proxySettings)();
+      : proxySettings === 'system'
+      ? new (await import('proxy-agent')).ProxyAgent()
+      : proxySettings;
   const result = (await (
     await myFetch(
       `http://ip-api.com/json/${ip}?fields=status,message,continent,continentCode,country,countryCode,region,\

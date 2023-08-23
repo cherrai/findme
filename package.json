@@ -5,11 +5,30 @@
   "main": "/dist/index.js",
   "type": "module",
   "scripts": {
-    "dev": "node --loader ts-node/esm ./test.ts",
-    "build": "rm -rf ./dist; tsc"
+    "dev": "cd ./test && ./test.sh",
+    "clear": "rm -rf ./dist && rm -rf ./node_modules",
+    "build": "npm run clear; npm i; tsc",
+    "publish": "npm run build && npm publish"
   },
-  "author": "",
-  "license": "LGPL-2.1-only",
+  "author": "cherrai",
+  "license": "AGPL-3.0-only",
+  "keywords": [
+    "geo",
+    "geolocation",
+    "location",
+    "typescript",
+    "geo",
+    "ip",
+    "ip address",
+    "findme"
+  ],
+  "homepage": "https://github.com/cherrai/findme",
+  "bugs": {
+    "url": "https://github.com/cherrai/findme/issues"
+  },
+  "files": [
+    "dist"
+  ],
   "dependencies": {
     "node-fetch": "^3.3.2",
     "proxy-agent": "^6.3.0"

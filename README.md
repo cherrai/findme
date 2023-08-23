@@ -1,19 +1,27 @@
 # Findme.js
 
-A free, open-source lightweight javascript library to get a detailed geolocation of IP address as well as to find where you are. Works on both browser side and non-browser side!
+A free, open-source light-weighted javascript library to get a detailed geolocation of IP address as well as to find where you are. Works on both browser side and non-browser side!
+
+## Feature
+
+🐰 Full TypeScript support
+🐰 Support remote IP address
+🐰 Support usage with proxy settings
+🐰 Free, open source, light-weighted
+🐰 Works on both browser side and non-browser side
 
 ## Installation
 
-_TODO_
-
-<!--
 ```bash
 npm i findme-js
-``` -->
+```
 
 ## Usage
 
+### Samples
+
 ```javascript
+/** Works on ESM. If you are using CommonJS, refer to next section. */
 import {getGeoInfo} from 'findme-js';
 
 /** Get the geolocation of me */
@@ -32,6 +40,39 @@ console.log(await getGeoInfo('', 'system'));
 console.log(await getGeoInfo('8.8.4.4');
 ```
 
+### Import
+
+**Notice**: This library is an ESM. You must use it in module scope, and depends on the type of your module, the ways to import may differ. 
+
+#### In ESM
+
+```javascript
+import {getGeoInfo} from 'findme-js';
+```
+
+#### In CommonJS
+
+You must use dynamic-import to import an ESM.
+
+```javascript
+import('findme-js').then(data => {
+  const getGeoInfo = data.geoInfo();
+  // ...
+});
+```
+ 
+
+You may wrap it in an asynchronous function and use IIFE in order to use it in a more elegant way:
+
+```javascript
+const getGeoInfoPromise = (async () =>
+  (await import('./dist/index.js')).getGeoInfo)();
+async function main() {
+  const getGeoInfo = await GeoInfoPromise();
+  // ...
+}
+```
+
 ## API
 
 ### Function: `getGeoInfo`
@@ -48,7 +89,7 @@ getGeoInfo: (ip: string = '', proxySettings: ProxySettings = 'none') =>
 
 ### Interface: `GeoInfo`
 
-The data structure is consistent with the returned data of https://ip-api.com/docs/api:json, but with `status` and `message` field omited.
+The data structure is consistent with the returned data of https://ip-api.com/docs/api:json, but with `status` and `message` field omitted.
 
 ## Notice
 
@@ -56,8 +97,35 @@ The data source of Findme.js comes from the free open API of https://ip-api.com/
 
 Due to the usage limit of 45 requests per minute (refer to https://ip-api.com/docs/legal for more information), it may be not a good choice to use it in a high-payload environment.
 
+## Development
+
+Clone this repository.
+
+Install the dependencies.
+```bash
+npm i
+```
+
+To build the test, run
+```bash
+npm run build
+```
+
+To run the test, run
+```bash
+npm run dev
+```
+
+You can also pass options to define which test to run.
+For more information use
+```bash
+npm run dev -- -h
+```
+
+
 ## License
 
-This library is licensed under LGPL-2.1.
+This library is licensed under __GNU Affero General Public License 3.0.__
 
-However, as this library uses the free open API of https://ip-api.com, **you must also comply their [user terms](https://ip-api.com/docs/legal) to use this library**, that is, **you can only use this library for a NON-COMMERICIAL purpose and in a NON-COMMERICIAL environment, otherwise the grant of usage will be regarded INVALID. Findme.js shall not be liable for any result caused by such illegal usages.**
+As this library uses the free open API of https://ip-api.com, **you must also comply their [user terms](https://ip-api.com/docs/legal) to use this library**, that is, **you can only use this library for a NON-COMMERCIAL purpose and in a NON-COMMERCIAL environment, otherwise the grant of usage will be regarded INVALID. Findme.js shall not be liable for any result caused by such illegal usages.**
+
