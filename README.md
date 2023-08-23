@@ -66,13 +66,13 @@ import('findme-js').then(data => {
 ```
  
 
-You may wrap it in an asynchronous function and use IIFE in order to use it in a more elegant way:
+You may wrap it in an asynchronous function and use IIFE in order to use it in a more elegant way to avoid importing it multiple times.
 
 ```javascript
 const getGeoInfoPromise = (async () =>
-  (await import('./dist/index.js')).getGeoInfo)();
+  (await import('findme-js')).getGeoInfo)();
 async function main() {
-  const getGeoInfo = await GeoInfoPromise();
+  const getGeoInfo = await getGeoInfoPromise;
   // ...
 }
 ```

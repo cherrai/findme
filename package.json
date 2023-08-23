@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "cd ./test && ./test.sh",
-    "clear": "rm -rf ./dist && rm -rf ./node_modules",
+    "clear": "rm -rf ./dist; rm -rf ./node_modules",
     "build": "npm run clear; npm i; tsc",
     "publish": "npm run build && npm publish"
   },

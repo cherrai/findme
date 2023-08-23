@@ -29,7 +29,8 @@ export interface GeoInfoSuccess extends GeoInfo {
 }
 
 export interface GeoInfoFailed {
-  status: 'failed',
+  status: 'fail',
+  query: string;
   message: 'private range' | 'reserved range' | 'invalid query';
 }
 

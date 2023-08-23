@@ -36,7 +36,7 @@ export async function getGeoInfo(
       }
     )
   )?.json()) as GeoInfoResponse;
-  return result.status === 'failed'
+  return result.status === 'fail'
     ? (() => {
         throw {status: result.status, message: result.message};
       })()
