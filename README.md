@@ -5,9 +5,13 @@ A free, open-source light-weighted javascript library to get a detailed geolocat
 ## Feature
 
 🐰 Full TypeScript support
+
 🐰 Support remote IP address
+
 🐰 Support usage with proxy settings
+
 🐰 Free, open source, light-weighted
+
 🐰 Works on both browser side and non-browser side
 
 ## Installation
