@@ -1,4 +1,4 @@
-import type { ProxyAgent } from 'proxy-agent';
+import type { AxiosProxyConfig } from 'axios';
 
 export interface GeoInfo {
   query: string;
@@ -36,4 +36,4 @@ export interface GeoInfoFailed {
 
 export type GeoInfoResponse = GeoInfoSuccess | GeoInfoFailed;
 
-export type ProxySettings = 'system' | 'none' | ProxyAgent;
+export type ProxySettings = 'system' | 'none' | AxiosProxyConfig;

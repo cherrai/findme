@@ -4,6 +4,8 @@ A free, open-source light-weighted javascript library to get a detailed geolocat
 
 ## Feature
 
+🐰 No API key is required
+
 🐰 Full TypeScript support
 
 🐰 Support remote IP address
@@ -88,8 +90,8 @@ getGeoInfo: (ip: string = '', proxySettings: ProxySettings = 'none') =>
 
 | **Parameters** | **Type**        | **Default** | **Description**                                                                                                                                                                                                                                                                                                                                                   |
 | -------------- | --------------- | ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| ip             | string          | `''`        | The IP address of which you want to get the geolocation. Both valid IPv4 and IPv6 addresses are supported. Setting it to empty string to get your own geolocation.                                                                                                                                                                                                |
-| proxySettings  | `ProxySettings` | `'none'`    | `'none'`: Don't use a proxy server. <br/> `'system'`: Use system proxy settings. <br/> `[Object ProxyAgent]`: You can also pass a `ProxyAgent` object to customize your own proxy settings. <br/> **Notice:** This parameter will be ignored in browser side! The proxy settings will always be determined by the browser in and you are not able to override it. |
+| ip             | string          | `''`        | The IP address of which you want to get the geolocation. You can also pass a domain name instead. Both valid IPv4 and IPv6 addresses are supported. Setting it to empty string to get your own geolocation.                                                                                                                                                                                                |
+| proxySettings  | `ProxySettings` | `'none'`    | `'none'`: Don't use a proxy server. <br/> `'system'`: Use system proxy settings. <br/> `[Object AxiosProxyConfig]`: You can also pass an `AxiosProxyConfig` object to customize your own proxy settings. <br/> **Notice:** This parameter will be ignored in browser side! The proxy settings will always be determined by the browser in and you are not able to override it. |
 
 ### Interface: `GeoInfo`
 
